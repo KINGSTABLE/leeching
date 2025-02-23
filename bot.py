@@ -15,17 +15,17 @@ GDRIVE_FOLDER_ID = os.getenv("GDRIVE_FOLDER_ID")  # Google Drive Folder ID where
 
 # Embedded Google Drive Credentials
 GDRIVE_CREDENTIALS = {
-    "type": "service_account",
-    "project_id": "clonebot-451709",
-    "private_key_id": "3e1c39b01a3f4f092119615e3eddcddee905d3fc",
-    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCljsbmpVmTNkEb\nJV1M/MJf1iwoXhh6ZX71FIw+CRgYi0jWZ0cGt6PZ4YJ/k2HXNNRUII/ExnI8f0C6\nluRjKvib2NN0Ro1ibQkIaqhMwM5RYLyXrvkG8hhWoIF8+8U2vjuw4Jd7oAW+7oH4\nEvbZ/LzfEiL4y5YRdHX4N8qO3srpzJx+FoKZUuBewMuXsKXP4kTKyFjkdgFqHxJF\nQ4l6CG0xOGG5nDeCyyWwTsMpEZXSHyjTsf9w0iGuTtXVGQwrAHW5kP5geTk2XJLB\nn6fnBKCStXdBOE8i9k/0qDwErTQHGVrVerVz66x0V274sCQmEsGbwDcPf6dNSg7P\njvdaqqSvAgMBAAECggEADaYeuccqAlv3tCA5d+5iq/oBO/a99+FEPTpLcZXYWbWp\n9JshHOmo5X6U/qWM7GwbkS/6ClP9+QTYtklYXOCfDGIs1Ko4X8PzebEpXOKMX+Mk\nyTCQsUTmQsYKxt4O3TuDukpZ0sRXlO0e4+/UUBZpD87z+ST3o0rBqwwWc/7kJbAp\nyD8R/tV9fCo59o8vV67rJP3v1teA4wUX+quz4tzQmy53TcBV8H8yfvqLOEugSt6h\n0KWg7ADvcVEVV+Asjzlkcby4TlPVnPrkC1MYiJjKlVkxxZ8ZVZQf2TMxEJXoH4WI\nP8hgWV98XXS4FbDaZDVWSnuhLJBkbL9YAzD6IG76sQKBgQDP9AarSXC82hmiy/vw\nF7md5tQsoAaGO9rN0s1JbBRdtVH69+wLs6KrioNPDIuKQO3CluBGyNYCavDKuvBT\nJZKT+CkoUNduzC2+ZOrom4M4SvQxP+0mq6xsgLnc2cS3M750TFDOfnGnogQQ8pnl\n9k5kkayXcYuqODZ9jRtIzXi+2QKBgQDLzyaGb+PUUDc9OiTps+HTSm9rS25/wHxR\nuZiTOpm63I3SulBVdxH4sbWN2NLGUeU5u8eOB9fy/02eRQ/TuatNrvdyOhQr4u71\nbIZSDHknjRWC5gIZOXthqSNg7mdjUHUc9jSOgqH5N0pvG+KX+IiXnGSpUin0yLWG\n//oKHqZaxwKBgCKmXpYb3pUZIjxmEMyop10QITpuT6f+QS8aeOpK//m9RLO0q7gn\nbmt24PpC9N1MhFFwIl6pCD/O4eBl1bWFBS9yoij9j2f+zYB0AFBR2UN/+cBbDoDr\nCgfqSw3pm0WLcaifLre5ieaMsHDCe7I9oEJRo5h4avUp+Kpi4LD4y63BAoGAcdRJ\npQ47BeqjX3vo/+nqt7K8FgX0Oj/Mb2ykLZ6uG7JxN3+9vG4bSHYge4/c8MzupNce\n9lGlJ9+1fy79TvhFF8cgBtkvSO+fHM23G35B8HgYypoiE+qJ4Zqw2sNsVQir0Dgm\nVG3bfzCFTxcY8F3sFBlSE0uDiWbMFBFFmn9R1CMCgYEAmxPM0c+l1N6smU3uSs4a\n+LrYXbG84g96OTg+Ibuw9G1tHZXNb8S4UeyZ+W8rcdoqSFqhNdh/wsRa+C0TQFsw\nP2RNU9fLZCiPKWGQuMmvoxb2LiuAcN06BuOf5P6FmL0SVvq/lULvRyh4caihLgL6\nLzMllBtEKxQBij8ni4YKWo8=\n-----END PRIVATE KEY-----\n",
-    "client_email": "cloneacc@clonebot-451709.iam.gserviceaccount.com",
-    "client_id": "107491569406351809755",
-    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-    "token_uri": "https://oauth2.googleapis.com/token",
-    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cloneacc%40clonebot-451709.iam.gserviceaccount.com",
-    "universe_domain": "googleapis.com"
+  "type": "service_account",
+  "project_id": "clonebot-451709",
+  "private_key_id": "87b18326bd469ddc304811d11a691ace2326722a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCiGJIAvZAFePOl\nrIjjSjkJ3E8vsNxu4SW1AWz8wRVh/UYV1NJIeftjwneMLP9XN1e6IPV3XBDY4V5F\nv9H1ME7CuV8vKVsNRzLMZ7M346TepJ2D3hRZhIbkUI/YDY+njL5BqFTSqAGTvIbP\nzIxtZOpFh4+Xc5L0nzbVARq50py/wp813dBaK+3IEmQFOJ2JkMi/uONpmcTOkjCq\nyDUHHnvWir1LtH3liU9WVmHV5mfAqk4yVVceDUHAPQoVPKZX+3rzEX9oSnHRUy1r\nF0KvRV9w07ba2PJ8Pra3f1aJW7yKoNOl+bE/gGMPrGZUGNCg88HDF92cIl7DR+T0\ne4hL+zDTAgMBAAECggEAL+Q4hvV67tL8ka93RkgwsAQidUG47x2gSWlhbRATJD9z\njJGzi2xW5POY5JaK3pbgWYLRY3GVHK8BbnQtMVcTfh7My59ZYoPts0zUO6gLlyhl\nzYc41fX88MoIpdnj3qoLsFRus0qmJKMn5Y9W0h9lxCM4PpQMEDBWP/qyjcJ3Q4Rh\nWF0EZV0DcPDHD4Al71Wgzk1Xz2Z3WEApucMuCjFSaBxM1TesmiicfOtAG7UR//Gz\n34idXjAJJehCF3xon4kAApb7QrfLy9bn2m8ahuiKMNAMgntNs8C0z0ix1u5133C7\nNh+uk0hef6/h38oZAv6YtQgTN0sL1fDE3O7Lv00RaQKBgQDbTtPMDeS9FqCNgKbE\nrvOEL0NWLEaPvQXlQ/cVDR0iwszM8unAhTP3kQv1sCX8YYptblQJVpu2R9tJkncq\nP9uzTcAoRPd7DCDOFd7zaEnekXg/T1gOnv7MZ9eyaOK8QsFwWgtT95a3WrmRv6qg\n1f8R5sTV//5MChkigCGDMV+GRwKBgQC9N0yxpdvZyqDCdTDZ9Ul74dwG4+TXS4rQ\naCPnn5TZBm6jtebB8/hxYtmUf7E+176WHcGyzdZTIsvdT0uLkEuuDh8WyBxrjpj8\nP+G2SFtGk3cOHOlY9nT2ziJltwswdbBddG3A6l/ROkB1DGzoKOI1M0TkoqEGIxa9\nTV39kQ7rFQKBgDg0b5twRBsh3WvmeNcXb1mFM2C2YC8eZpBnZr+CaOErw4kTCE1K\n1hKwnbwNtO6FoRCCog7yn12L9OtaGig9zXSajJDFfBeQ+CdY+5auN6BO795p20uD\n/BEu29zhfJp7EVBWA2k1nu7G1aBA2t31ejWASxn9TZL3U5G//Na+pJipAoGAZnTu\nO3eDD3BwEjvg4vS2ALWxLa3zOT03glgRsRcxQz7/Y/hYZoeT7NnI1Wc7c7rhAWpF\ne2uH9WZvG3wXfQ/6WtpcrTpYYUlKv7RbpReTDSlGm0a+eCSj+wxthcRS87+Wa1Rj\nJcYDckjnpDnBMwkITCRh1qfVJ3ySkJi3H1mPyW0CgYEAkOB/nyeuXaPo7JuE59zI\nGCpXGt1rcyUrgeq5tQ6tTG4JmGZZPjg+XQwalhq3i9LX/BKv5dk0BByxQVMYxCZi\nOlDHQbWUx7jJOPsJn4XdVj+5xXmKc8Xf97eGcpXcdkRCea7zZINgjcrhcJp71IQQ\nTqea2JWrUtS7BpVmYBYP0kc=\n-----END PRIVATE KEY-----\n",
+  "client_email": "cloneacc@clonebot-451709.iam.gserviceaccount.com",
+  "client_id": "107491569406351809755",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cloneacc%40clonebot-451709.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
 }
 
 # Initialize Telegram Bot
