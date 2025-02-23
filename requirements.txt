@@ -1,3 +1,9 @@
 python-telegram-bot
 google-api-python-client
 google-auth
+pyrogram
+tgcrypto
+google-auth
+google-auth-oauthlib
+google-auth-httplib2
+google-api-python-client
