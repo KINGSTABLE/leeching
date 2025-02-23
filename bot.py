@@ -1,65 +1,51 @@
 import os
 import logging
-from telegram import Update
-from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters
-from google.oauth2 import service_account
+from pyrogram import Client, filters
+from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 
-# Google Drive API Setup
-SCOPES = ['https://www.googleapis.com/auth/drive']
-SERVICE_ACCOUNT_FILE = 'E:/DOWNLOADS/CLONEBOT/clonebot-451709-3e1c39b01a3f.json'  # Path to your JSON key file
-TEAM_DRIVE_FOLDER_ID = '1xa81RJIZ_zPHboGZs_74fy9Whjcd0AaY'  # Folder ID in Team Drive
+# Telegram API Config
+API_ID = int(os.getenv("API_ID"))
+API_HASH = os.getenv("API_HASH")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
-# Telegram Bot Token
-TELEGRAM_BOT_TOKEN = '6656285409:AAGchYWCtZs6Vf6DhAHmzQRjFn44NKDc6ZA'
+# Google Drive Config
+GDRIVE_FOLDER_ID = os.getenv("GDRIVE_FOLDER_ID")  # Google Drive Folder ID where files will be uploaded
 
-# Initialize Google Drive API
-def initialize_drive():
-    creds = service_account.Credentials.from_service_account_file(
-        SERVICE_ACCOUNT_FILE, scopes=SCOPES
-    )
-    return build('drive', 'v3', credentials=creds)
+# Initialize Telegram Bot
+app = Client("gdrive_bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
-# Upload file to Google Drive
+# Setup Logging
+logging.basicConfig(level=logging.INFO)
+
+# Authenticate Google Drive API
+def get_gdrive_service():
+    creds = Credentials.from_service_account_file("credentials.json", scopes=["https://www.googleapis.com/auth/drive"])
+    return build("drive", "v3", credentials=creds)
+
+# Upload File to Google Drive
 def upload_to_drive(file_path, file_name):
-    drive_service = initialize_drive()
-    file_metadata = {
-        'name': file_name,
-        'parents': [TEAM_DRIVE_FOLDER_ID]
-    }
+    service = get_gdrive_service()
+    file_metadata = {"name": file_name, "parents": [GDRIVE_FOLDER_ID]}
     media = MediaFileUpload(file_path, resumable=True)
-    file = drive_service.files().create(
-        body=file_metadata,
-        media_body=media,
-        supportsAllDrives=True
-    ).execute()
-    return file.get('id')
+    file = service.files().create(body=file_metadata, media_body=media, fields="id").execute()
+    return f"https://drive.google.com/file/d/{file.get('id')}"
 
-# Telegram Bot Handlers
-async def start(update: Update, context):
-    await update.message.reply_text("Send me a file, and I'll upload it to Google Drive!")
+# Handle File Uploads
+@app.on_message(filters.document | filters.video | filters.audio)
+async def upload_file(client, message):
+    msg = await message.reply_text("📤 Uploading to Google Drive...")
 
-async def handle_file(update: Update, context):
-    file = await update.message.document.get_file()
-    file_path = f"downloads/{file.file_id}_{file.file_name}"
-    await file.download_to_drive(file_path)
-    
+    file_path = await message.download()
+    file_name = message.document.file_name if message.document else message.video.file_name if message.video else message.audio.file_name
+
     try:
-        file_id = upload_to_drive(file_path, file.file_name)
-        await update.message.reply_text(f"File uploaded to Google Drive! File ID: {file_id}")
-    except Exception as e:
-        await update.message.reply_text(f"Failed to upload file: {e}")
-    finally:
+        drive_link = upload_to_drive(file_path, file_name)
+        await msg.edit_text(f"✅ Uploaded Successfully: [View File]({drive_link})")
         os.remove(file_path)
+    except Exception as e:
+        await msg.edit_text(f"❌ Upload Failed: {str(e)}")
 
-# Main Function
-if __name__ == '__main__':
-    logging.basicConfig(level=logging.INFO)
-    
-    app = ApplicationBuilder().token(TELEGRAM_BOT_TOKEN).build()
-    
-    app.add_handler(CommandHandler("start", start))
-    app.add_handler(MessageHandler(filters.Document.ALL, handle_file))
-    
-    app.run_polling()
+# Start the bot
+app.run()
